@@ -4,6 +4,8 @@
 > 
 > 协议：[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 > 
+> 阶段：机翻（1）
+> 
 > 我自成佛自度我，佛度凡尘我度佛。
 
 * [在线阅读](https://cgfs.apachecn.org)
