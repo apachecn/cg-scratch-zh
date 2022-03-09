@@ -4,7 +4,7 @@
 > 
 > 协议：[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 > 
-> 利欲驱人万火牛，江湖浪迹一沙鸥。——陆游《秋思》
+> 我自成佛自度我，佛度凡尘我度佛。
 
 * [在线阅读](https://cgfs.apachecn.org)
 * [在线阅读（Gitee）](https://apachecn.gitee.io/doc-template/)
