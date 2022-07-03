@@ -5,51 +5,39 @@
 
 +   [飞龙](https://github.com/wizardforcel)：562826179
 
-## 章节列表
+## 有用的链接
 
-+   [零、简介](docs/04.md)
-+   [一、常用概念](docs/05.md)
-+   [第一部分：光线追踪](docs/06.md)
-	+   [二、基本光线追踪](docs/07.md)
-	+   [三、光线](docs/08.md)
-	+   [四、阴影和倒影](docs/09.md)
-	+   [五、扩展光线跟踪器](docs/10.md)
-+   [第二部分：光栅化](docs/11.md)
-	+   [六、直线](docs/12.md)
-	+   [七、实心三角形](docs/13.md)
-	+   [八、阴影三角形](docs/14.md)
-	+   [九、透视投影](docs/15.md)
-	+   [十、描述和渲染场景](docs/16.md)
-	+   [十一、裁剪](docs/17.md)
-	+   [十二、隐藏表面移除](docs/18.md)
-	+   [十三、阴影](docs/19.md)
-	+   [十四、纹理](docs/20.md)
-	+   [十五、扩展光栅化器](docs/21.md)
-+   [附录](docs/22.md)
-	+   [附录 A、线性代数](docs/23.md)
-+   [后记](docs/24.md)
++   [ApacheCN 文档导航](https://docs.apachecn.org/)
++   [谷歌翻译](https://translate.google.cn/)
++   [ApacheCN 校对活动参与手册](https://github.com/apachecn/home/blob/master/docs/translate/joining-guide.md)
++   [译后编辑](https://www.bing.com/search?q=%E8%AF%91%E5%90%8E%E7%BC%96%E8%BE%91&mkt=zh-CN)
++   [当翻译竟然变成了文本编辑——李笑来](https://zhuanlan.zhihu.com/p/465979584)
++   [翻译引擎易错术语列表（欢迎补充）](https://github.com/apachecn/home/blob/master/docs/translate/trans-table.md)
++   [廖雪峰 Git 教程](https://www.liaoxuefeng.com/wiki/896043488029600)
 
 ## 流程
 
 ### 一、认领
 
-首先查看[整体进度](https://github.com/apachecn/cg-scratch-zh/issues/1)，确认没有人认领了你想认领的章节。
+校对者需要熟练掌握 Markdown 和 Git，以及文档的主题（编程，Web开发，大数据，AI，安全之一）。
+
+首先查看[整体进度](https://github.com/apachecn/ds-cmd-line-2e-zh/issues/1)，确认没有人认领了你想认领的章节。
  
 然后回复 ISSUE，注明“章节 + QQ 号”，便于联系和跟踪进度。
 
 ### 二、校对
 
-需要校对：
+需要校对【专业术语】和【格式】。
 
-+   部分语法
-+   专业词汇
-+   格式
+【语法】无需校对因为已经校对完了，并且请最大程度保留原文的语言风格。
 
 译文在`docs`目录下，原文请见每个文章开头处的链接。
 
-请见[校对活动参与手册](https://github.com/apachecn/home/blob/master/docs/translate/joining-guide.md)来提高效率。
-
 **注意**：不要修改译文的文件名，因为它们和章节对应！
+
+确保译文符合下方的【Markdown 排版要求】一节。
+
+请参考下方的【有用的正则表达式】一节，以及[【翻译引擎易错术语列表】](https://github.com/apachecn/home/blob/master/docs/translate/trans-table.md)来提高效率。
 
 ### 三、提交
 
@@ -58,4 +46,77 @@
 +   `add`、`commit`和`push`
 +   `pull request`
 
-请见 [Github 入门指南](https://github.com/apachecn/kaggle/blob/master/docs/GitHub)。
+请见[廖雪峰 Git 教程](https://www.liaoxuefeng.com/wiki/896043488029600)。
+
+## Markdown 排版要求
+
+1.  代码块和图片无需校对，并且不计入字数。
+3.  汉字和英文字母，汉字和数字之间空一格。但是中文标点和任何字符之间都不用空格。
+4.  粗体斜体和链接要求同上，中文和英文粗体，英文和中文粗体之间也需要空格。
+5.  任何编程语言中出现的东西，比如变量名，类名，函数名，包名，以及命令行中出现的东西，比如命令，文件名，路径，扩展名，都需要包在内联代码中。内联代码与汉字/标点之间无需空格，但和英文字母或数字之间空一格。
+6.  表格的格式容易乱，保证它们显示正常。
+7.  标题和较短的列表需要特别校对。
+8.  有少量未翻译的段落，使用[谷歌翻译](https://translate.google.cn/)之后再校对。
+
+## 有用的正则表达式
+
+链接：
+
+```
+(?<!!)\[[^\]]*\]
+```
+
+表格：
+
+```
+^\|
+```
+
+中文间空格：
+
+中文间空格一般是翻译引擎出错的地方。
+
+```
+[\u4e00-\u9fff]\s+[\u4e00-\u9fff]
+```
+
+未翻译段落：
+
+```
+^[a-zA-Z0-9][^\u4e00-\u9fff]+$
+^\s*([\+\-\*]\x20{3}|\d+\.\x20{2})[^\u4e00-\u9fff]+$
+```
+
+内联代码：
+
+在 Markdown 中，内联代码需要用反引号括起来，但一些教程并没有这样做。于是，需要检查中英文边界，将没有用反引号括起来的内联代码改掉。
+
+```
+[\u2018-\u201d\u3001-\u301c\u4e00-\u9fff\uff01-\uff65]\x20*[A-Za-z0-9]|[A-Za-z0-9]\x20*[\u2018-\u201d\u3001-\u301c\u4e00-\u9fff\uff01-\uff65]
+```
+
+粗体/斜体：
+
+```
+\*\*[^\*]+\*\*|(?<!\*)\*[^\*]+\*(?!\*)
+```
+
+标题：
+
+```
+^#+\x20
+```
+
+列表（二十字以内）：
+
+短的列表由于没有上下文非常容易出错。
+
+```
+^\s*([\+\-\*]\x20{3}|\d+\.\x20{2}).{1,20}$
+```
+
+## 奖励
+
+校对者在完工后可以领取千字2~4元的奖励（视难度和工作量而定），请联系飞龙（Q562826179，V:wizardforcel）。
+
+字数统计遵循 word 标准：每一个汉字和标点算一个字，一个连续的英文字母、数字和标点序列算一个字
